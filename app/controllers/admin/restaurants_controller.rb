@@ -46,6 +46,8 @@ class Admin::RestaurantsController < ApplicationController
         flash[:alert] = "restaurant was deleted"
     end
 
+    
+
   private
 
   def restaurant_params
