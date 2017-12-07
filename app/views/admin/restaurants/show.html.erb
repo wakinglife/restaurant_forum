@@ -3,12 +3,11 @@
   <div class="row">
      <div class="col-md-12">
        <h1><%= @restaurant.name %></h1>
- </div>
+       <%= @restaurant.category.name %>
+     </div>
 
 
-
-
- <div class="col-md-4">
+    <div class="col-md-4">
         <%= image_tag @restaurant.image, class: "img-responsive center-block" %>
         <br>
         <div class="well">
@@ -26,9 +25,9 @@
   <div class="clearfix"></div>
 
 
- <hr>
+   <hr>
 
 
- </div>
+  </div>
 
 </div>
