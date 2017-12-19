@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
          def admin?
             self.role == "admin"
-          end
+         end
+    has_many :comments
 
 end
