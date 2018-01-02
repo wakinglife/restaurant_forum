@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
    <div class="col-md-6 col-md-offset-3">
-    <!-- <% if @user.errors.any? %>
+    <% if @user.errors.any? %>
       <h4>We have some errors here !</h4>
       <ul>
         <% @user.errors.full_messages.each do |msg| %>
@@ -9,7 +9,15 @@
         <% end %>
       </ul>
       <hr>
+     <% end %>
+     <!-- <% if @user.errors.present? %>
+       <ul>
+         <% @user.errors.each do |error, message| %>
+           <li> <%= "#{error.capitalize}  #{message}" %></li>
+         <% end %>
+       </ul>
      <% end %> -->
+
 
     <h2> Edit Profile </h2>
     <tr>
