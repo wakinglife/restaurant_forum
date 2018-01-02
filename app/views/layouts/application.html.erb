@@ -24,7 +24,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                
+
                 <%= link_to "餐廳評論網", root_path, class: "navbar-brand" %>
               </div>
 
@@ -36,6 +36,7 @@
                  <li><%= link_to 'Admin後台', admin_restaurants_path %></li>
                  <% end %>
                   <li><p class="navbar-text">Hi, <%= current_user.email %></p></li>
+                  <li><%= link_to 'Profile', user_path(current_user) %></li>
                   <li><%= link_to('登出', destroy_user_session_path, method: :delete) %></li>
                   <li><%= link_to('修改密碼', edit_user_registration_path) %></li>
                   <% else %>

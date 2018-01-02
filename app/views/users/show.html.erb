@@ -1,0 +1,37 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+
+
+
+ <div class="page-header">
+    <div class="col-md-3 col-sm-4">
+      <!-- <div class="text-center"> -->
+
+      <%= image_tag @user.avatar, class: "img-responsive img-rounded" %>
+      <!-- <img src="http://via.placeholder.com/350x350" class="img-responsive img-rounded"> -->
+
+
+    <div class="col-md-9 col-sm-8">
+      <h3>Name:<%= @user.name %></h3>
+      <p><strong>Email:<%= @user.email %></strong></p>
+       <div>About You:<%= simple_format @user.intro %></div>
+       <% if @user.email == current_user.email %>
+         <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary" %>
+       <% end %>
+     </div>
+
+
+    </div>
+
+
+
+    <div class="clearfix"></div>
+
+
+  <br>
+
+ </div>
+</div>
+</div>
