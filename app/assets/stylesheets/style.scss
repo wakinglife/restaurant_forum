@@ -32,10 +32,20 @@ body {
   margin: 10px;
 }
 
-// .col-md-3 col-sm-4 {
-//   float: right;
-// }
-//
-// .col-md-9 col-sm-8 {
-//   float: left;
-// }
+.my-restaurant {
+   display: inline-block;
+   text-align: center;
+   padding: 7px 7px 0 7px;
+ }
+
+ .my-restaurant > div {
+   height: 100px;
+ }
+
+ .my-restaurant img {
+   max-height: 100%;
+ }
+
+ .panel a:hover .my-restaurant {
+   background-color: #C1DDF5;
+ }
