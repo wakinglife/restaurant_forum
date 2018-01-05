@@ -1,13 +1,21 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
+
+  def index
+
+    @users = User.all
+
+  end
+
+
   def show
-    @user = User.find(params[:id])
+
     @commented_restaurants = @user.restaurants.uniq
   end
 
   def edit
-     @user = User.find(params[:id])
+
      unless @user == current_user
        redirect_to user_path(@user)
      end
@@ -15,7 +23,7 @@ class UsersController < ApplicationController
 
 
   def update
-     @user = User.find(params[:id])
+
 
      if @user.update_attributes(user_params)
        redirect_to user_path(@user)
