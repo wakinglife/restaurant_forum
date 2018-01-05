@@ -9,6 +9,9 @@
      <li role="presentation" class="active">
        <%= link_to '最新動態', feeds_restaurants_path %>
      </li>
+     <li role="presentation">
+       <%= link_to 'TOP10 人氣餐廳', ranking_restaurants_path %>
+     </li>
    </ul>
 </div>
 
@@ -27,7 +30,8 @@
            <div class="panel-body">
              <% @recent_restaurants.each do |restaurant| %>
                <div>
-                 <h4>
+
+                  <h4>
                    <%= link_to restaurant.name, restaurant_path(restaurant) %>
                    <small><%= restaurant.category.name %></small>
                  </h4>
@@ -35,6 +39,7 @@
                  <hr>
                </div>
              <% end %>
+
            </div>
          </div>
        </div>
@@ -45,13 +50,16 @@
               <div class="panel-body">
                 <% @recent_comments.each do |comment| %>
                   <div>
+
                     <h4>
                       <%= link_to comment.restaurant.name, restaurant_path(comment.restaurant) %>
                     </h4>
                     <p><%= truncate(comment.content, length: 80) %><small > - by <%= link_to comment.user.name, user_path(comment.user) %></small></p>
                     <hr>
+                    <div class="clearfix"></div>
                   </div>
                 <% end %>
+
               </div>
             </div>
           </div>

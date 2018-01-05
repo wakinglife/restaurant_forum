@@ -17,7 +17,12 @@ class Restaurant < ApplicationRecord
 
   def is_liked?(user)
    self.liked_users.include?(user)
- end
+  end
 
+  # def favorites_count
+  #  self.favorites_users.count=self.favorites.size
+  #  self.save
+  # end
+  
 
 end
