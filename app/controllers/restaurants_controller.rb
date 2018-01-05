@@ -21,6 +21,11 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
   end
 
+  def ranking
+      @favorites_count = Restaurant.order(favorites_count: :desc).limit(10)
+
+  end
+
   def favorite
       @restaurant = Restaurant.find(params[:id])
       @restaurant.favorites.create!(user: current_user)
