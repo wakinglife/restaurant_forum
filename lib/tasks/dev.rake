@@ -44,5 +44,13 @@ namespace :dev do
     puts "now you have #{Comment.count} comments data"
   end
 
+  task fake_all: :enviroment do
+    Rake::Task['db:migrate'].execute
+    Rake::Task['db:seed'].execute
+    Rake::Task['dev:fake_restaurant'].execute
+    Rake::Task['dev:fake_user'].execute
+    Rake::Task['dev:fake_comment'].execute
+    
+  end
 
 end
