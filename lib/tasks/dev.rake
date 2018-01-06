@@ -25,7 +25,8 @@ namespace :dev do
         name: user_name,
         email: "#{user_name}@example.com",
         password: "12345678"
-        )
+        image: File.open(Rails.root.join("seed_img/#{rand(31..45)}.jpg"))
+      )
     end
     puts "have created fake users"
     puts "now you have #{User.count} users data"
@@ -50,7 +51,7 @@ namespace :dev do
     Rake::Task['dev:fake_restaurant'].execute
     Rake::Task['dev:fake_user'].execute
     Rake::Task['dev:fake_comment'].execute
-    
+
   end
 
 end

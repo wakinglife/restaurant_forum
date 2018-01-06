@@ -12,6 +12,9 @@
     <li role="presentation" class="active">
       <%= link_to 'TOP10 人氣餐廳', ranking_restaurants_path %>
     </li>
+    <li role="presentation">
+     <%= link_to '美食達人', users_path %>
+   </li>
   </ul>
 
 <br>
@@ -45,7 +48,7 @@
                    <small><%= restaurant.category.name %></small>
                  </h4>
                  <p><%= truncate(restaurant.description, length: 200) %></p>
-                 <%= link_to 'Show', restaurant_path(restaurant), class: "btn btn-primary" %>
+                 <%= link_to 'Show', restaurant_path(restaurant), class: "btn btn-info" %>
                  <%= render partial: 'shared/favorite', locals: { restaurant: restaurant } %>
                  <%= render partial: 'shared/like', locals: { restaurant: restaurant } %>
                  <hr>
