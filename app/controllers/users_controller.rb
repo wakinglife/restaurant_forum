@@ -12,6 +12,9 @@ class UsersController < ApplicationController
   def show
 
     @commented_restaurants = @user.restaurants.uniq
+    @favorited_restaurants = @user.restaurants
+    @followings = @user.followings
+    @followers = @user.followers
   end
 
   def edit
