@@ -121,7 +121,7 @@
                    <div class="my-restaurant">
                     <div>
                       <% if following.avatar? %>
-                        <%= image_tag following.avatar, class: "img-circle", size: "50" %>
+                        <%= image_tag following.avatar, class: "img-circle", size: "80" %>
                       <% else %>
                         <img src="http://via.placeholder.com/80x80" class="img-circle">
                       <% end %>
@@ -151,9 +151,9 @@
                    <div class="my-restaurant">
                     <div>
                       <% if follower.avatar? %>
-                        <%= image_tag follower.avatar, class: "img-circle", size: "50" %>
+                        <%= image_tag follower.avatar, class: "img-circle", size: "80" %>
                       <% else %>
-                        <img src="http://via.placeholder.com/50x50" class="img-circle">
+                        <img src="http://via.placeholder.com/80x80" class="img-circle">
                       <% end %>
                       <!-- <%= image_tag(follower.avatar, height: 30, width: 30, class: "img-circle") %> -->
                       <!-- <%= image_tag "http://via.placeholder.com/120x120", class: "img-responsive center-block img-rounded"  %> -->
