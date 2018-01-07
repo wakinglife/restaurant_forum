@@ -22,7 +22,9 @@
            </ul>
            <div><%= simple_format @user.intro %></div>
            <% if @user.email == current_user.email %>
-             <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary" %>
+             <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-info" %>
+             <%= link_to 'Edit Password',edit_user_registration_path, class: "nav-text btn btn-info" %>
+
            <% end %>
          </div>
 
@@ -52,7 +54,13 @@
                   <%= link_to restaurant_path(restaurant) do %>
                   <div class="my-restaurant">
                     <div>
-                      <%= image_tag restaurant.image, class: "img-responsive img-rounded" %>
+                      <% if restaurant.image? %>
+                        <%= image_tag restaurant.image, class: "img-rounded img-responsive" %>
+                      <% else %>
+                        <img src="http://via.placeholder.com/90x60" class="img-rounded img-responsive">
+                      <% end %>
+
+                      <!-- <%= image_tag restaurant.image, class: "img-responsive img-rounded" %> -->
                     </div>
                     <h5><%= restaurant.name %></h5>
                   </div>
@@ -70,12 +78,27 @@
                   <% @favorited_restaurants.each do |restaurant| %>
 
                   <%= link_to restaurant_path(restaurant) do %>
-                 <div class="my-restaurant">
+                  <div class="my-restaurant">
                     <div>
-                      <%= image_tag restaurant.image, class: "img-responsive img-rounded" %>
+
+                        <% if restaurant.image? %>
+                          <%= image_tag restaurant.image, class: "img-rounded img-responsive" %>
+                        <% else %>
+                          <img src="http://via.placeholder.com/90x60" class="img-rounded img-responsive">
+
+                        <% end %>
+
+
+                      <!-- <%= image_tag restaurant.image, class: "img-responsive img-rounded" %> -->
+
+                        <h5><%= restaurant.name %></h5>
+
+                      <div class="text-center">
+                      <%= render partial: 'shared/favorite', locals: { restaurant: restaurant } %>
+                      </div>
+                     </div>
+
                     </div>
-                    <h5><%= restaurant.name %></h5>
-                  </div>
                   <% end %>
 
                   <% end %>
@@ -97,10 +120,18 @@
                   <%= link_to user_path(following) do %>
                    <div class="my-restaurant">
                     <div>
+                      <% if following.avatar? %>
+                        <%= image_tag following.avatar, class: "img-circle", size: "50" %>
+                      <% else %>
+                        <img src="http://via.placeholder.com/80x80" class="img-circle">
+                      <% end %>
+
                       <!-- <%= image_tag(following.avatar, height: 30, width: 30, class: "img-circle") %> -->
-                      <%= image_tag "http://via.placeholder.com/120x120", class: "img-responsive center-block img-rounded"  %>
+                      <!-- <%= image_tag "http://via.placeholder.com/120x120", class: "img-responsive center-block img-rounded"  %> -->
                     </div>
                     <h5><%= following.name %></h5>
+                    <%= link_to 'Unfollow', user_path(following), method: :delete, class:"btn btn-info"%>
+
                   </div>
                   <% end %>
 
@@ -119,8 +150,13 @@
                   <%= link_to user_path(follower) do %>
                    <div class="my-restaurant">
                     <div>
+                      <% if follower.avatar? %>
+                        <%= image_tag follower.avatar, class: "img-circle", size: "50" %>
+                      <% else %>
+                        <img src="http://via.placeholder.com/50x50" class="img-circle">
+                      <% end %>
                       <!-- <%= image_tag(follower.avatar, height: 30, width: 30, class: "img-circle") %> -->
-                      <%= image_tag "http://via.placeholder.com/120x120", class: "img-responsive center-block img-rounded"  %>
+                      <!-- <%= image_tag "http://via.placeholder.com/120x120", class: "img-responsive center-block img-rounded"  %> -->
                     </div>
                     <h5><%= follower.name %></h5>
                   </div>

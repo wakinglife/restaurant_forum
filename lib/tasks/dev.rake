@@ -25,7 +25,7 @@ namespace :dev do
         name: user_name,
         email: "#{user_name}@example.com",
         password: "12345678"
-        image: File.open(Rails.root.join("seed_img/#{rand(31..45)}.jpg"))
+        
       )
     end
     puts "have created fake users"

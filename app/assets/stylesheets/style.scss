@@ -24,7 +24,8 @@
  }
 
 body {
-  background-image: image-url("bk7.jpg")
+  background-image: image-url("bk7.jpg");
+  // background-repeat: no-repeat;
 }
 
 .edit_user img {
@@ -36,6 +37,7 @@ body {
    display: inline-block;
    text-align: center;
    padding: 7px 7px 0 7px;
+  //  margin-bottom: 7px
  }
 
  .my-restaurant > div {
@@ -50,7 +52,7 @@ body {
    background-color: #C1DDF5;
  }
 
- 
+
  .ranking-item {
   margin-bottom: 15px;
 }
