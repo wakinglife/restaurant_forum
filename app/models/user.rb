@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
    validates_presence_of :name, :email
-  
+  #  :intro, :avatar
 
     mount_uploader :avatar, AvatarUploader
     has_many :comments, dependent: :restrict_with_error
