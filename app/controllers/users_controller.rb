@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :friend_list]
 
 
   def index
 
     @users = User.all
-
   end
 
 
@@ -27,7 +26,6 @@ class UsersController < ApplicationController
 
   def update
 
-
      if @user.update_attributes(user_params)
        redirect_to user_path(@user)
      else
@@ -36,13 +34,11 @@ class UsersController < ApplicationController
   end
 
 
-  def friendlist
+  def friend_list
 
-      @friends = current_user.all_friends
+      @friends = @user.all_friends
 
-      
-
-    end
+  end
 
 
 

@@ -20,8 +20,12 @@ Rails.application.routes.draw do
 
   end
 
-  resources :users, only: [:index, :show, :edit, :update]
-  resources :friendlists, only: [:index]
+  resources :users, only: [:index, :show, :edit, :update] do
+     member do
+      get :friend_list
+    end
+  end
+  
   resources :followships, only: [:create, :destroy]
   resources :friendships, only: [:create, :destroy]
   resources :categories, only: :show

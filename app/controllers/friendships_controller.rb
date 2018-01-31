@@ -4,7 +4,7 @@ class FriendshipsController < ApplicationController
    @friendship = current_user.friendships.build(friend_id: params[:friend_id])
 
    if @friendship.save
-     flash[:notice] = "Successfully send friend request"
+     flash[:notice] = "Successfully add friend"
      redirect_back(fallback_location: root_path)
    else
      flash[:alert] = @friendship.errors.full_messages.to_sentence
