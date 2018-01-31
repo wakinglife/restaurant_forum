@@ -15,9 +15,14 @@
 
      <h4><%= friend.name %></h4>
    <% end %>
-   <%= render partial: "shared/follow", locals: {user: @user} %>
 
-   <%= render partial: "shared/friend", locals: {user: @user} %>
+
+
+    <%= render partial: "shared/follow", locals: {user: @user} %>
+
+    <%= render partial: "shared/friend", locals: {user: @user} %>
+
+
 
 
    </div>
