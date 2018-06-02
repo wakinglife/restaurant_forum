@@ -1,3 +1,4 @@
+![Maintainability](https://api.codeclimate.com/v1/badges/c0609ce113878eab620c/maintainability)
 # Restaurant Forum
 
 # 安裝：
@@ -17,12 +18,11 @@
 -  先新增分類項目
 ```
 - $ rails dev:fake
-
 ```
 # User stories
 ## 使用者認證
-- 使用者可以註冊、登入 
-- 除了文章總表，都需要登入
+- 除了註冊和登入頁，使用者一定要登入才能使用網站
+- 使用者能創建帳號、登入、登出 
 ## 後台管理介面
 - 進入後台必須有管理員 (admin) 權限
 - seed.rb，新增一組預設管理員，限定帳號：admin@example.com；密碼：87654321
