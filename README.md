@@ -4,7 +4,7 @@
 # 安裝：
 
 ```
-- $ https://github.com/wakinglife/restaurant_forum.git
+- $ git clone https://github.com/wakinglife/restaurant_forum.git
 - $ cd restaurant_forum
 - $ bundle install
 - $ rails db:migrate
